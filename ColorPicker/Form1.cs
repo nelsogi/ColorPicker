@@ -27,6 +27,12 @@ namespace ColorPicker
 
         private void btnHide_Click(object sender, EventArgs e)
         {
+            
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
             this.Hide();
             notifyIcon.Visible = true;
         }
@@ -47,5 +53,29 @@ namespace ColorPicker
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
         }
+
+        private void pickColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorPickerOverlayForm pickerOverlay = new ColorPickerOverlayForm();
+
+            // Afficher le formulaire en mode dialogue (bloque Form1 jusqu'à la fermeture de l'overlay)
+            if (pickerOverlay.ShowDialog() == DialogResult.OK)
+            {
+                // Récupérer la couleur sélectionnée une fois le formulaire fermé
+                Color selectedColor = pickerOverlay.SelectedColor;
+
+                
+                // Convertir en hexadécimal (format #RRGGBB)
+                string hex = "#" + (selectedColor.ToArgb() & 0x00FFFFFF).ToString("X6");
+
+                MessageBox.Show(hex);
+                Clipboard.SetText(hex);
+            }
+
+            // Nettoyer l'objet overlay
+            pickerOverlay.Dispose();
+        }
+
+        
     }
 }

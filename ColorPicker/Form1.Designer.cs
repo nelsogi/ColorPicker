@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColorPicker));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.btnHide = new System.Windows.Forms.Button();
             this.ntfiContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlTitleBar.SuspendLayout();
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.btnHide = new System.Windows.Forms.Button();
+            this.pickColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.ntfiContextMenu.SuspendLayout();
+            this.pnlTitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -46,24 +48,10 @@
             this.notifyIcon.ContextMenuStrip = this.ntfiContextMenu;
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             // 
-            // pnlTitleBar
-            // 
-            this.pnlTitleBar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pnlTitleBar.Controls.Add(this.btnHide);
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
-            this.pnlTitleBar.Name = "pnlTitleBar";
-            // 
-            // btnHide
-            // 
-            resources.ApplyResources(this.btnHide, "btnHide");
-            this.btnHide.FlatAppearance.BorderSize = 0;
-            this.btnHide.Name = "btnHide";
-            this.btnHide.UseVisualStyleBackColor = true;
-            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
-            // 
             // ntfiContextMenu
             // 
             this.ntfiContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pickColorToolStripMenuItem,
             this.openToolStripMenuItem,
             this.quitAppToolStripMenuItem});
             this.ntfiContextMenu.Name = "ntfiContextMenu";
@@ -81,6 +69,37 @@
             resources.ApplyResources(this.quitAppToolStripMenuItem, "quitAppToolStripMenuItem");
             this.quitAppToolStripMenuItem.Click += new System.EventHandler(this.quitAppToolStripMenuItem_Click);
             // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnlTitleBar.Controls.Add(this.btnMinimize);
+            this.pnlTitleBar.Controls.Add(this.btnHide);
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            // 
+            // btnHide
+            // 
+            resources.ApplyResources(this.btnHide, "btnHide");
+            this.btnHide.FlatAppearance.BorderSize = 0;
+            this.btnHide.Name = "btnHide";
+            this.btnHide.UseVisualStyleBackColor = true;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
+            // 
+            // pickColorToolStripMenuItem
+            // 
+            this.pickColorToolStripMenuItem.Name = "pickColorToolStripMenuItem";
+            resources.ApplyResources(this.pickColorToolStripMenuItem, "pickColorToolStripMenuItem");
+            this.pickColorToolStripMenuItem.Click += new System.EventHandler(this.pickColorToolStripMenuItem_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackgroundImage = global::ColorPicker.Properties.Resources.minus_sign;
+            resources.ApplyResources(this.btnMinimize, "btnMinimize");
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // frmColorPicker
             // 
             resources.ApplyResources(this, "$this");
@@ -93,8 +112,8 @@
             this.Name = "frmColorPicker";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.pnlTitleBar.ResumeLayout(false);
             this.ntfiContextMenu.ResumeLayout(false);
+            this.pnlTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -107,6 +126,8 @@
         private System.Windows.Forms.ContextMenuStrip ntfiContextMenu;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitAppToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pickColorToolStripMenuItem;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }
 
