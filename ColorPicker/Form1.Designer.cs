@@ -31,37 +31,48 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmColorPicker));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ntfiContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pickColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.btnHide = new System.Windows.Forms.Button();
-            this.pickColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.ntfiContextMenu.SuspendLayout();
+            this.btnOptions = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblColorCopied = new System.Windows.Forms.Label();
+            this.btnPickColor = new System.Windows.Forms.Button();
+            this.pnlColorInfoBorder = new System.Windows.Forms.Panel();
+            this.pnlColorInfo = new System.Windows.Forms.Panel();
+            this.lblColorHexa = new System.Windows.Forms.Label();
+            this.pnlColorShow = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ContextMenuOptions.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            this.pnlColorInfoBorder.SuspendLayout();
+            this.pnlColorInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon
             // 
             this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon.ContextMenuStrip = this.ntfiContextMenu;
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
             // 
-            // ntfiContextMenu
+            // ContextMenuOptions
             // 
-            this.ntfiContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pickColorToolStripMenuItem,
-            this.openToolStripMenuItem,
             this.quitAppToolStripMenuItem});
-            this.ntfiContextMenu.Name = "ntfiContextMenu";
-            resources.ApplyResources(this.ntfiContextMenu, "ntfiContextMenu");
+            this.ContextMenuOptions.Name = "ntfiContextMenu";
+            resources.ApplyResources(this.ContextMenuOptions, "ContextMenuOptions");
             // 
-            // openToolStripMenuItem
+            // pickColorToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.pickColorToolStripMenuItem.Name = "pickColorToolStripMenuItem";
+            resources.ApplyResources(this.pickColorToolStripMenuItem, "pickColorToolStripMenuItem");
+            this.pickColorToolStripMenuItem.Click += new System.EventHandler(this.pickColorToolStripMenuItem_Click);
             // 
             // quitAppToolStripMenuItem
             // 
@@ -72,48 +83,109 @@
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pnlTitleBar.Controls.Add(this.btnMinimize);
-            this.pnlTitleBar.Controls.Add(this.btnHide);
+            this.pnlTitleBar.Controls.Add(this.btnOptions);
+            this.pnlTitleBar.Controls.Add(this.label1);
+            this.pnlTitleBar.Controls.Add(this.label2);
             resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             // 
-            // btnHide
+            // btnOptions
             // 
-            resources.ApplyResources(this.btnHide, "btnHide");
-            this.btnHide.FlatAppearance.BorderSize = 0;
-            this.btnHide.Name = "btnHide";
-            this.btnHide.UseVisualStyleBackColor = true;
-            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
+            resources.ApplyResources(this.btnOptions, "btnOptions");
+            this.btnOptions.FlatAppearance.BorderSize = 0;
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
-            // pickColorToolStripMenuItem
+            // label1
             // 
-            this.pickColorToolStripMenuItem.Name = "pickColorToolStripMenuItem";
-            resources.ApplyResources(this.pickColorToolStripMenuItem, "pickColorToolStripMenuItem");
-            this.pickColorToolStripMenuItem.Click += new System.EventHandler(this.pickColorToolStripMenuItem_Click);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
-            // btnMinimize
+            // label2
             // 
-            this.btnMinimize.BackgroundImage = global::ColorPicker.Properties.Resources.minus_sign;
-            resources.ApplyResources(this.btnMinimize, "btnMinimize");
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.lblColorCopied);
+            this.pnlMain.Controls.Add(this.btnPickColor);
+            this.pnlMain.Controls.Add(this.pnlColorInfoBorder);
+            resources.ApplyResources(this.pnlMain, "pnlMain");
+            this.pnlMain.Name = "pnlMain";
+            // 
+            // lblColorCopied
+            // 
+            resources.ApplyResources(this.lblColorCopied, "lblColorCopied");
+            this.lblColorCopied.Name = "lblColorCopied";
+            // 
+            // btnPickColor
+            // 
+            this.btnPickColor.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPickColor.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnPickColor, "btnPickColor");
+            this.btnPickColor.Name = "btnPickColor";
+            this.btnPickColor.UseVisualStyleBackColor = false;
+            this.btnPickColor.Click += new System.EventHandler(this.btnPickColor_Click);
+            // 
+            // pnlColorInfoBorder
+            // 
+            this.pnlColorInfoBorder.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlColorInfoBorder.Controls.Add(this.pnlColorInfo);
+            resources.ApplyResources(this.pnlColorInfoBorder, "pnlColorInfoBorder");
+            this.pnlColorInfoBorder.Name = "pnlColorInfoBorder";
+            // 
+            // pnlColorInfo
+            // 
+            this.pnlColorInfo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlColorInfo.Controls.Add(this.lblColorHexa);
+            this.pnlColorInfo.Controls.Add(this.pnlColorShow);
+            resources.ApplyResources(this.pnlColorInfo, "pnlColorInfo");
+            this.pnlColorInfo.Name = "pnlColorInfo";
+            this.pnlColorInfo.Click += new System.EventHandler(this.placeColor_Click);
+            // 
+            // lblColorHexa
+            // 
+            resources.ApplyResources(this.lblColorHexa, "lblColorHexa");
+            this.lblColorHexa.Name = "lblColorHexa";
+            this.lblColorHexa.Click += new System.EventHandler(this.placeColor_Click);
+            // 
+            // pnlColorShow
+            // 
+            resources.ApplyResources(this.pnlColorShow, "pnlColorShow");
+            this.pnlColorShow.Name = "pnlColorShow";
+            this.pnlColorShow.Click += new System.EventHandler(this.placeColor_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // frmColorPicker
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlTitleBar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frmColorPicker";
             this.ShowIcon = false;
+            this.Deactivate += new System.EventHandler(this.frmColorPicker_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.ntfiContextMenu.ResumeLayout(false);
+            this.ContextMenuOptions.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
+            this.pnlTitleBar.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            this.pnlColorInfoBorder.ResumeLayout(false);
+            this.pnlColorInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,13 +193,21 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.Panel pnlTitleBar;
-        private System.Windows.Forms.Button btnHide;
-        private System.Windows.Forms.ContextMenuStrip ntfiContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuOptions;
         private System.Windows.Forms.ToolStripMenuItem quitAppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pickColorToolStripMenuItem;
-        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel pnlTitleBar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnOptions;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlColorInfoBorder;
+        private System.Windows.Forms.Panel pnlColorInfo;
+        private System.Windows.Forms.Button btnPickColor;
+        private System.Windows.Forms.Panel pnlColorShow;
+        private System.Windows.Forms.Label lblColorHexa;
+        private System.Windows.Forms.Label lblColorCopied;
     }
 }
 
