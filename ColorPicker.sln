@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "�
 		..\..\..\..\..\Downloads\color-picker.cur = ..\..\..\..\..\Downloads\color-picker.cur
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupColorPicker", "SetupColorPicker\SetupColorPicker.vdproj", "{1A6C6140-5FC0-3ACA-9B5F-F5F2561D1358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,8 @@ Global
 		{0E792754-DB66-49A0-B58E-F61639011DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E792754-DB66-49A0-B58E-F61639011DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E792754-DB66-49A0-B58E-F61639011DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A6C6140-5FC0-3ACA-9B5F-F5F2561D1358}.Debug|Any CPU.ActiveCfg = Debug
+		{1A6C6140-5FC0-3ACA-9B5F-F5F2561D1358}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
