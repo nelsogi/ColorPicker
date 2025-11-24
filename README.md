@@ -18,18 +18,16 @@ Un outil simple et efficace pour sélectionner et copier des couleurs sur votre 
 
 ## Installation rapide (pour les utilisateurs)
 
-## Option 1 : Télécharger l'installateur
+### Télécharger et installer
 
-1. Rendez-vous dans la section [Releases](https://github.com/nelsogi/ColorPicker/releases) de ce dépôt.
-    
-2. Téléchargez le fichier `.msi` ou `.exe` (si disponible).
-    
-3. Exécutez le fichier et suivez les instructions d’installation.
-    
-4. Lancez l’application depuis le menu Démarrer ou le bureau.
+Téléchargez la dernière version de l’installateur ici :
+[https://github.com/nelsogi/ColorPicker/releases/latest](https://github.com/nelsogi/ColorPicker/releases/latest)
+
+Suivez simplement l’assistant d’installation pour avoir ColorPicker sur votre PC Windows.
+
     
 
-## Option 2 : Installer via GitHub (pour les développeurs)
+## Installer via GitHub (pour les développeurs)
 
 1. Installez [Git](https://git-scm.com/) sur votre machine.
     
