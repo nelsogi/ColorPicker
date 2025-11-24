@@ -1,73 +1,114 @@
-# ColorPicker
+# ![icone](/ColorPicker/Resources/colorPickerIcon.ico) ColorPicker
 
-Application ColorPicker pour Windows﻿  
-Un outil simple et efficace pour sélectionner et copier des couleurs sur votre écran Windows. Idéal pour les développeurs, designers et tout utilisateur qui souhaite extraire rapidement une couleur à partir de n’importe quelle application.
+**Application rapide et intuitive pour extraire/capturer les couleurs sur Windows.**
+
+![Logo](ColorPicker/Resources/ColorPickerLogo.png)
+
+---
+
+## Table des matières
+
+- [Aperçu](#Apercu)
+    
+- [Fonctionnalités](#Fonctionnalités)
+    
+- [Installation](#Installation)
+        
+- [Utilisation](#Utilisation)
+    
+- [Bugs et suggestions](#Bugs)
+    
+- [Communauté](#Communauté)
+    
+- [Créateur](#Créateur)
+    
+- [Licence](#Licence)
+    
+
+---
+
+## Apercu
+
+Outil desktop pour Windows permettant de sélectionner n’importe quelle couleur sur votre écran grâce à un outil pipette, et de récupérer son code en un clic.
+
+---
 
 ## Fonctionnalités
 
-- Sélection de couleur via pipette (eyedropper)
+- Sélection de couleur sur tout l’écran (pipette/eyedropper)
     
-- Affichage de la couleur sélectionnée en RGB, HEX et autres formats
+- Affichage instantané des codes couleur (HEX, RGB, HTML)
     
 - Copie automatique du code couleur dans le presse-papiers
     
-- Interface légère et intuitive
+- Interface simple et ergonomique
     
-- Compatible Windows 7/10/11
+- Léger et rapide
     
-
-## Installation rapide (pour les utilisateurs)
-
-### Télécharger et installer
-
-Téléchargez la dernière version de l’installateur ici :
-[https://github.com/nelsogi/ColorPicker/releases/latest](https://github.com/nelsogi/ColorPicker/releases/latest)
-
-Suivez simplement l’assistant d’installation pour avoir ColorPicker sur votre PC Windows.
-
+- Compatible Windows 7, 10, 11
     
 
-## Installer via GitHub (pour les développeurs)
+---
 
-1. Installez [Git](https://git-scm.com/) sur votre machine.
+## Installation
+
+## Par Installateur
+
+- [Télécharger la dernière version](https://github.com/nelsogi/ColorPicker/releases/latest)
     
-2. Ouvrez un terminal (cmd, PowerShell ou Git Bash).
+- Lancez l’assistant puis suivez les étapes à l’écran
     
-3. Clonez le dépôt :
+
+## Par Git
+
+bash
+
+`git clone https://github.com/nelsogi/ColorPicker.git`
+
+- Ouvrez le dossier `ColorPicker` dans Visual Studio
     
-    text
+- Compilez en mode Release
     
-    `git clone https://github.com/nelsogi/ColorPicker.git`
+- Lancez l’exécutable depuis `bin/Release/`
     
-4. Ouvrez le projet dans Visual Studio.
-    
-5. Compilez en mode Release.
-    
-6. Lancez l’exécutable depuis le dossier `bin/Release`.
-    
+
+---
 
 ## Utilisation
 
-- Lancez l’application.
-
-- Afficher les icones cachées et selectioner l'app.
+1. Démarrez l’application (ColorPicker.exe)
     
-- Utilisez la pipette pour sélectionner une couleur sur votre écran.
+2. L’icône s’affiche dans la barre système Windows
     
-- Le code couleur (RGB, HEX, etc.) s’affiche et est copié automatiquement dans le presse-papiers.
+3. Cliquez pour ouvrir la pipette et sélectionnez une couleur n’importe où sur l’écran
     
-- Fermez l’application ou continuez à sélectionner d’autres couleurs.
+4. Le code couleur (HEX/RGB) est affiché et copié dans le presse-papiers
     
 
-## Contribuer
+---
 
-Les contributions sont les bienvenues !
+## Bugs
 
-- Ouvrez une issue pour signaler un bug ou proposer une amélioration.
+Avant d’ouvrir une issue, merci de vérifier qu’elle n’existe pas déjà !  
+Donnez autant de détails/étapes de reproduction que possible.
+
+---
+
+## Communauté
+
+- Discussions et suggestions : [GitHub Discussions](https://github.com/nelsogi/ColorPicker/discussions)
     
-- Proposez une pull request pour ajouter une fonctionnalité ou corriger un bug.
+- Envoyez vos questions ou parcours d’utilisation !
     
+
+---
+
+## Créateur
+
+Développé par [Nelsogi](https://github.com/nelsogi).
+
+---
 
 ## Licence
 
-Ce projet est sous licence MIT.
+Ce projet est sous licence MIT — voir le fichier [LICENSE](https://www.perplexity.ai/search/LICENSE).
