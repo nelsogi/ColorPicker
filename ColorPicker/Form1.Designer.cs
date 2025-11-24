@@ -46,12 +46,19 @@
             this.lblColorHexa = new System.Windows.Forms.Label();
             this.pnlColorShow = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlHistory = new System.Windows.Forms.Panel();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlShowHistory = new System.Windows.Forms.Panel();
             this.ContextMenuOptions.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlColorInfoBorder.SuspendLayout();
             this.pnlColorInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHistory.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -64,6 +71,7 @@
             // 
             this.ContextMenuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pickColorToolStripMenuItem,
+            this.historyToolStripMenuItem,
             this.quitAppToolStripMenuItem});
             this.ContextMenuOptions.Name = "ntfiContextMenu";
             resources.ApplyResources(this.ContextMenuOptions, "ContextMenuOptions");
@@ -163,11 +171,46 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            resources.ApplyResources(this.historyToolStripMenuItem, "historyToolStripMenuItem");
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
+            // pnlHistory
+            // 
+            this.pnlHistory.Controls.Add(this.btnReturn);
+            this.pnlHistory.Controls.Add(this.panel2);
+            resources.ApplyResources(this.pnlHistory, "pnlHistory");
+            this.pnlHistory.Name = "pnlHistory";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnReturn, "btnReturn");
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Controls.Add(this.pnlShowHistory);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // pnlShowHistory
+            // 
+            this.pnlShowHistory.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.pnlShowHistory, "pnlShowHistory");
+            this.pnlShowHistory.Name = "pnlShowHistory";
+            // 
             // frmColorPicker
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.pnlHistory);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlTitleBar);
@@ -186,6 +229,8 @@
             this.pnlColorInfoBorder.ResumeLayout(false);
             this.pnlColorInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlHistory.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -208,6 +253,11 @@
         private System.Windows.Forms.Panel pnlColorShow;
         private System.Windows.Forms.Label lblColorHexa;
         private System.Windows.Forms.Label lblColorCopied;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlHistory;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlShowHistory;
     }
 }
 

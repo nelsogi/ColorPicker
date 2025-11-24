@@ -424,6 +424,12 @@
   <data name="pickColorToolStripMenuItem.Text" xml:space="preserve">
     <value>Pick color</value>
   </data>
+  <data name="historyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="historyToolStripMenuItem.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
   <data name="quitAppToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -431,7 +437,7 @@
     <value>Quit</value>
   </data>
   <data name="ContextMenuOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 48</value>
+    <value>127, 70</value>
   </data>
   <data name="&gt;&gt;ContextMenuOptions.Name" xml:space="preserve">
     <value>ContextMenuOptions</value>
@@ -611,7 +617,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlTitleBar.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblColorCopied.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -770,7 +776,7 @@
     <value>2</value>
   </data>
   <data name="pnlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 93</value>
+    <value>260, 94</value>
   </data>
   <data name="pnlMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 260</value>
@@ -788,12 +794,12 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB88AAAFNCAYAAACOtS67AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA/7JJREFUeF7s/Qd4lmW67g+PSnHW3rP2f+3lWmtGRTqhW2ghgST0mhDA3kZHxQqo
+        EAAACxABrSO9dQAA/7JJREFUeF7s/Qd4lmW67g+PSnHW3rP2f+3lWmtGRTqhW2ghgST0mhDA3kZHxQqo
         qCiWQaWlBwKoWLB3VEoIHdLr20t67yHJ+77pOOv/nd9xXff9JDF7fd9ua0Z0rt9xXMd9P0+ivhGdtWZ+
         nOf1m98IgiAIgiAIgiAIgvCLo77e5ldbbwqpqctZW1ub9UBtnZ7ajPU19embqmtTt9bUpuyorU/dWleX
         HFNbl7q1vjF9U9PFvCUD/1yCIAiCIAiCIAiCIAiCIAiCIAiCIAiC8Iuitj5nbXn1sYrisg9RULobBaWR
@@ -8382,7 +8388,103 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="btnReturn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnReturn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MV Boli, 15.75pt, style=Bold</value>
+  </data>
+  <data name="btnReturn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReturn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 219</value>
+  </data>
+  <data name="btnReturn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 38</value>
+  </data>
+  <data name="btnReturn.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnReturn.Text" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="&gt;&gt;btnReturn.Name" xml:space="preserve">
+    <value>btnReturn</value>
+  </data>
+  <data name="&gt;&gt;btnReturn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReturn.Parent" xml:space="preserve">
+    <value>pnlHistory</value>
+  </data>
+  <data name="&gt;&gt;btnReturn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlShowHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pnlShowHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 190</value>
+  </data>
+  <data name="pnlShowHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlShowHistory.Name" xml:space="preserve">
+    <value>pnlShowHistory</value>
+  </data>
+  <data name="&gt;&gt;pnlShowHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlShowHistory.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;pnlShowHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 17</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 196</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>pnlHistory</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 97</value>
+  </data>
+  <data name="pnlHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 260</value>
+  </data>
+  <data name="pnlHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlHistory.Name" xml:space="preserve">
+    <value>pnlHistory</value>
+  </data>
+  <data name="&gt;&gt;pnlHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlHistory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -8708,6 +8810,12 @@
     <value>quitAppToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;quitAppToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;historyToolStripMenuItem.Name" xml:space="preserve">
+    <value>historyToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;historyToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

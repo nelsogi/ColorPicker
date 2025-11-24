@@ -39,9 +39,13 @@ namespace ColorPicker
             pnlColorInfoBorder.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorInfoBorder.Width, pnlColorInfoBorder.Height, 15, 15));
             pnlColorInfo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorInfo.Width, pnlColorInfo.Height, 15, 15));
             btnPickColor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnPickColor.Width, btnPickColor.Height, 20, 20));
+            btnReturn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnReturn.Width, btnReturn.Height, 20, 20));
 
 
             pnlMain.Location = new Point(10, 93);
+            pnlHistory.Visible = false;
+            pnlHistory.Location = new Point(10, 93);
+
 
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
@@ -90,11 +94,19 @@ namespace ColorPicker
             pickColor();
         }
 
+        /// <summary>
+        /// Click event handler for the "Pick Color" button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPickColor_Click(object sender, EventArgs e)
         {
             pickColor();
         }
 
+        /// <summary>
+        /// Opens a color picker overlay, allowing the user to select a color, and processes the selected color.
+        /// </summary>
         private void pickColor()
         {
             ColorPickerOverlayForm pickerOverlay = new ColorPickerOverlayForm();
@@ -126,6 +138,10 @@ namespace ColorPicker
             pickerOverlay.Dispose();
         }
 
+        /// <summary>
+        /// Load the color picking history from a JSON file.
+        /// </summary>
+        /// <returns></returns>
         static List<ColorPicked> LoadHistory()
         {
             if (!File.Exists(historyFile))
@@ -138,6 +154,10 @@ namespace ColorPicker
             return list ?? new List<ColorPicked>();
         }
 
+        /// <summary>
+        /// Save the color picking history to a JSON file.
+        /// </summary>
+        /// <param name="history"></param>
         static void SaveHistory(List<ColorPicked> history)
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
@@ -177,6 +197,11 @@ namespace ColorPicker
             ContextMenuOptions.Show(btnOptions, new Point(0, -ContextMenuOptions.Height));
         }
 
+        /// <summary>
+        /// Click event to copy the color hexa code to clipboard.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void placeColor_Click(object sender, EventArgs e)
         {
             if (pnlColorShow.BackColor != SystemColors.ControlLight)
@@ -187,6 +212,12 @@ namespace ColorPicker
                 await Task.Delay(2000);   // 2 secondes
                 lblColorCopied.Visible = false;
             }
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlHistory.Visible = !pnlHistory.Visible;
+            pnlMain.Visible = !pnlHistory.Visible;
         }
     }
 }
