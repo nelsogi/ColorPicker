@@ -1,12 +1,13 @@
-﻿using System;
+﻿/// Nelson Rossi 
+/// Color Picker Application
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace ColorPicker
     {
         #region Form Radius Button       
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
+        public static extern IntPtr CreateRoundRectRgn
         (
             int nLeftRect,
             int nTopRect,
@@ -32,21 +33,34 @@ namespace ColorPicker
 
         List<ColorPicked> history = LoadHistory();
 
+        /// <summary>
+        /// Constructor for the main form.
+        /// </summary>
         public frmColorPicker()
         {
             InitializeComponent();
+
+            // Apply rounded corners to various panels and buttons
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnlColorInfoBorder.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorInfoBorder.Width, pnlColorInfoBorder.Height, 15, 15));
             pnlColorInfo.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorInfo.Width, pnlColorInfo.Height, 15, 15));
+            pnlShowHistory.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlShowHistory.Width, pnlShowHistory.Height, 15, 15));
+            pnlShowHistoryBorder.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlShowHistoryBorder.Width, pnlShowHistoryBorder.Height, 15, 15));
             btnPickColor.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnPickColor.Width, btnPickColor.Height, 20, 20));
             btnReturn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnReturn.Width, btnReturn.Height, 20, 20));
+            pnlColorShow.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorShow.Width, pnlColorShow.Height, 15, 15));
 
+            // Configure the history panel for auto-scrolling and wrapping
+            pnlShowHistory.AutoScroll = true;
+            pnlShowHistory.WrapContents = true;
+            loadHistoryPanels();
 
+            // Initial visibility and location settings
             pnlMain.Location = new Point(10, 93);
             pnlHistory.Visible = false;
             pnlHistory.Location = new Point(10, 93);
 
-
+            // Start minimized and hidden from taskbar
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
 
@@ -54,11 +68,27 @@ namespace ColorPicker
             var screenWorkingArea = Screen.PrimaryScreen.WorkingArea;
             this.Location = new Point((screenWorkingArea.Right - this.Width) - 15, (screenWorkingArea.Bottom - this.Height) - 15);
 
+            // Load the last picked color from history
             if (history != null && history.Count > 0)
             {
-                ColorPicked last = history[history.Count - 1]; // dernier élément
+                ColorPicked last = history[history.Count - 1]; // Last
                 lblColorHexa.Text = last.Hex;
                 pnlColorShow.BackColor = ColorTranslator.FromHtml(last.Hex);
+            }
+
+        }
+
+        /// <summary>
+        /// Load the history panels into the history display panel.
+        /// </summary>
+        private void loadHistoryPanels()
+        {
+            pnlShowHistory.Controls.Clear();
+
+            foreach (var color in history.AsEnumerable().Reverse())
+            {
+                ColorInstancePanel colorPanel = new ColorInstancePanel(color.Rgb, color.Hex);
+                pnlShowHistory.Controls.Add(colorPanel);
             }
 
         }
@@ -117,7 +147,7 @@ namespace ColorPicker
                 // Récupérer la couleur sélectionnée une fois le formulaire fermé
                 Color selectedColor = pickerOverlay.SelectedColor;
 
-                
+
                 // Convertir en hexadécimal (format #RRGGBB)
                 string hex = "#" + (selectedColor.ToArgb() & 0x00FFFFFF).ToString("X6");
                 string rgb = $"{selectedColor.R}, {selectedColor.G}, {selectedColor.B}";
@@ -214,8 +244,26 @@ namespace ColorPicker
             }
         }
 
+        /// <summary>
+        /// Change view to history panel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            loadHistoryPanels();
+            pnlHistory.Visible = !pnlHistory.Visible;
+            pnlMain.Visible = !pnlHistory.Visible;
+        }
+
+        /// <summary>
+        /// Change view back to main panel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            loadHistoryPanels();
             pnlHistory.Visible = !pnlHistory.Visible;
             pnlMain.Visible = !pnlHistory.Visible;
         }

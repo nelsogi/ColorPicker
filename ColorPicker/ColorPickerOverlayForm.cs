@@ -5,7 +5,14 @@ namespace ColorPicker
 {
     public partial class ColorPickerOverlayForm : Form
     {
+        /// <summary>
+        /// Color selected by the user
+        /// </summary>
         public Color SelectedColor { get; private set; } = Color.Empty;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ColorPickerOverlayForm()
         {
             InitializeComponent();
@@ -62,6 +69,20 @@ namespace ColorPicker
                 // Copy the pixel from the screen
                 g.CopyFromScreen(screenPoint, Point.Empty, new Size(1, 1));
                 return bmp.GetPixel(0, 0);
+            }
+        }
+
+        /// <summary>
+        /// Event to handle key presses for cancelling the color picking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ColorPickerOverlayForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
             }
         }
     }

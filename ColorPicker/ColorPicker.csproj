@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorInstancePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorInstancePanel.Designer.cs">
+      <DependentUpon>ColorInstancePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColorPicked.cs" />
     <Compile Include="ColorPickerOverlayForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ColorInstancePanel.resx">
+      <DependentUpon>ColorInstancePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPickerOverlayForm.resx">
+      <DependentUpon>ColorPickerOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.aa-DJ.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
