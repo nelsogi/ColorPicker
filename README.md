@@ -4,6 +4,15 @@
 
 ![Logo](ColorPicker/Resources/ColorPickerLogo.png)
 
+![Build](https://img.shields.io/badge/build-passing-brightgreen) 
+![Version](https://img.shields.io/badge/version-1.1-blue) 
+![License](https://img.shields.io/badge/license-MIT-yellow) 
+![Platform](https://img.shields.io/badge/platform-Windows-blue) 
+![Language](https://img.shields.io/badge/C%23-100%25-4F4F4F.svg?logo=c-sharp)
+![Stars](https://img.shields.io/github/stars/nelsogi/ColorPicker?style=social)
+![Issues](https://img.shields.io/github/issues/nelsogi/ColorPicker)
+![Last Release](https://img.shields.io/github/v/release/nelsogi/ColorPicker)
+
 ---
 
 ## Table des matières
@@ -35,18 +44,15 @@ Outil desktop pour Windows permettant de sélectionner n’importe quelle couleu
 
 ## Fonctionnalités
 
-- Sélection de couleur sur tout l’écran (pipette/eyedropper)
-    
-- Affichage instantané des codes couleur (HEX, RGB, HTML)
-    
-- Copie automatique du code couleur dans le presse-papiers
-    
-- Interface simple et ergonomique
-    
-- Léger et rapide
-    
-- Compatible Windows 7, 10, 11
-    
+| Fonctionnalité                        | Statut      | Description                                              |
+|---------------------------------------|-------------|----------------------------------------------------------|
+| Sélection de couleur pipette          | ✔️          | Permet de prélever une couleur n'importe où sur l'écran  |
+| Affichage HEX & RGB                   | ✔️          | Montre le code couleur immédiatement et le copie         |
+| Copie automatique dans le presse-papiers | ✔️       | Copie dès la sélection pour utilisation rapide           |
+| Interface ergonomique                 | ✔️          | Simple et adaptée à Windows                              |
+| Compatible Windows 7/10/11            | ✔️          | Fonctionne sur toutes les versions majeures              |
+| Léger et rapide                       | ✔️          | Exécutable optimisé                                      |
+
 
 ---
 
