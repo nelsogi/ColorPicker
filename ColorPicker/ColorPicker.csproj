@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppContext.cs" />
     <Compile Include="ColorInstancePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +102,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormControler.cs" />
+    <Compile Include="MainControler.cs" />
+    <Compile Include="OverlayFormControler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ColorInstancePanel.resx">

@@ -16,7 +16,7 @@ namespace ColorPicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmColorPicker());
+            Application.Run(new AppContext());
         }
     }
 }

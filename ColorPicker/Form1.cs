@@ -29,16 +29,18 @@ namespace ColorPicker
         );
         #endregion
 
-        static string historyFile = "colors.json";
 
-        List<ColorPicked> history = LoadHistory();
+        
+
+        private FormControler _formControler;
 
         /// <summary>
         /// Constructor for the main form.
         /// </summary>
-        public frmColorPicker()
+        public frmColorPicker(FormControler formControler)
         {
             InitializeComponent();
+            _formControler = formControler;
 
             // Apply rounded corners to various panels and buttons
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -50,48 +52,22 @@ namespace ColorPicker
             btnReturn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnReturn.Width, btnReturn.Height, 20, 20));
             pnlColorShow.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlColorShow.Width, pnlColorShow.Height, 15, 15));
 
-            // Configure the history panel for auto-scrolling and wrapping
-            pnlShowHistory.AutoScroll = true;
-            pnlShowHistory.WrapContents = true;
-            loadHistoryPanels();
+            
+            
 
             // Initial visibility and location settings
             pnlMain.Location = new Point(10, 93);
             pnlHistory.Visible = false;
             pnlHistory.Location = new Point(10, 93);
 
-            // Start minimized and hidden from taskbar
-            this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
 
-            // Calculate the position
-            var screenWorkingArea = Screen.PrimaryScreen.WorkingArea;
-            this.Location = new Point((screenWorkingArea.Right - this.Width) - 15, (screenWorkingArea.Bottom - this.Height) - 15);
+            _formControler.loadHistoryPanels(pnlShowHistory);
+            _formControler.LoadLastPickedColor(lblColorHexa, pnlColorShow);
 
-            // Load the last picked color from history
-            if (history != null && history.Count > 0)
-            {
-                ColorPicked last = history[history.Count - 1]; // Last
-                lblColorHexa.Text = last.Hex;
-                pnlColorShow.BackColor = ColorTranslator.FromHtml(last.Hex);
-            }
 
         }
 
-        /// <summary>
-        /// Load the history panels into the history display panel.
-        /// </summary>
-        private void loadHistoryPanels()
-        {
-            pnlShowHistory.Controls.Clear();
-
-            foreach (var color in history.AsEnumerable().Reverse())
-            {
-                ColorInstancePanel colorPanel = new ColorInstancePanel(color.Rgb, color.Hex);
-                pnlShowHistory.Controls.Add(colorPanel);
-            }
-
-        }
+        
 
         /// <summary>
         /// Event for form closing to hide it instead of closing.
@@ -139,50 +115,36 @@ namespace ColorPicker
         /// </summary>
         private void pickColor()
         {
-            ColorPickerOverlayForm pickerOverlay = new ColorPickerOverlayForm();
+            //ColorPickerOverlayForm pickerOverlay = new ColorPickerOverlayForm();
 
-            // Afficher le formulaire en mode dialogue (bloque Form1 jusqu'à la fermeture de l'overlay)
-            if (pickerOverlay.ShowDialog() == DialogResult.OK)
-            {
-                // Récupérer la couleur sélectionnée une fois le formulaire fermé
-                Color selectedColor = pickerOverlay.SelectedColor;
+            //// Afficher le formulaire en mode dialogue (bloque Form1 jusqu'à la fermeture de l'overlay)
+            //if (pickerOverlay.ShowDialog() == DialogResult.OK)
+            //{
+            //    // Récupérer la couleur sélectionnée une fois le formulaire fermé
+            //    Color selectedColor = pickerOverlay.SelectedColor;
 
 
-                // Convertir en hexadécimal (format #RRGGBB)
-                string hex = "#" + (selectedColor.ToArgb() & 0x00FFFFFF).ToString("X6");
-                string rgb = $"{selectedColor.R}, {selectedColor.G}, {selectedColor.B}";
+            //    // Convertir en hexadécimal (format #RRGGBB)
+            //    string hex = "#" + (selectedColor.ToArgb() & 0x00FFFFFF).ToString("X6");
+            //    string rgb = $"{selectedColor.R}, {selectedColor.G}, {selectedColor.B}";
 
-                ColorPicked colorPicked = new ColorPicked(hex, rgb);
+            //    ColorPicked colorPicked = new ColorPicked(hex, rgb);
 
-                history.Add(colorPicked);
+            //    history.Add(colorPicked);
 
-                SaveHistory(history);
+            //    SaveHistory(history);
 
-                lblColorHexa.Text = hex;
-                pnlColorShow.BackColor = ColorTranslator.FromHtml(hex);
+            //    lblColorHexa.Text = hex;
+            //    pnlColorShow.BackColor = ColorTranslator.FromHtml(hex);
 
-                Clipboard.SetText(hex);
-            }
+            //    Clipboard.SetText(hex);
+            //}
 
-            // Nettoyer l'objet overlay
-            pickerOverlay.Dispose();
+            //// Nettoyer l'objet overlay
+            //pickerOverlay.Dispose();
         }
 
-        /// <summary>
-        /// Load the color picking history from a JSON file.
-        /// </summary>
-        /// <returns></returns>
-        static List<ColorPicked> LoadHistory()
-        {
-            if (!File.Exists(historyFile))
-            {
-                return new List<ColorPicked>();
-            }
-
-            string json = File.ReadAllText(historyFile);
-            var list = JsonSerializer.Deserialize<List<ColorPicked>>(json);
-            return list ?? new List<ColorPicked>();
-        }
+        
 
         /// <summary>
         /// Save the color picking history to a JSON file.

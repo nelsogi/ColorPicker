@@ -10,13 +10,16 @@ namespace ColorPicker
         /// </summary>
         public Color SelectedColor { get; private set; } = Color.Empty;
 
+        private OverlayFormControler _overlayFormControler;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public ColorPickerOverlayForm()
+        public ColorPickerOverlayForm(OverlayFormControler overlayFormControler)
         {
             InitializeComponent();
             ConfigureOverlay();
+            _overlayFormControler = overlayFormControler;
         }
 
         /// <summary>
