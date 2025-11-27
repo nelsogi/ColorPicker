@@ -5,7 +5,7 @@
 ![Logo](ColorPicker/Resources/ColorPickerLogo.png)
 
 ![Build](https://img.shields.io/badge/build-passing-brightgreen) 
-![Version](https://img.shields.io/badge/version-1.1-blue) 
+![Version](https://img.shields.io/badge/version-1.2-blue) 
 ![License](https://img.shields.io/badge/license-MIT-yellow) 
 ![Platform](https://img.shields.io/badge/platform-Windows-blue) 
 ![Language](https://img.shields.io/badge/C%23-100%25-4F4F4F.svg?logo=c-sharp)
