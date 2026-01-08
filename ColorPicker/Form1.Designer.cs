@@ -33,8 +33,10 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.ContextMenuOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pickColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.btnOptions = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -44,15 +46,14 @@
             this.pnlColorInfo = new System.Windows.Forms.Panel();
             this.lblColorHexa = new System.Windows.Forms.Label();
             this.pnlColorShow = new System.Windows.Forms.Panel();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHistory = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.pnlShowHistoryBorder = new System.Windows.Forms.Panel();
             this.pnlShowHistory = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOptions = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.optionTip = new System.Windows.Forms.ToolTip(this.components);
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuOptions.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -74,6 +75,7 @@
             this.ContextMenuOptions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pickColorToolStripMenuItem,
             this.historyToolStripMenuItem,
+            this.optionsToolStripMenuItem,
             this.quitAppToolStripMenuItem});
             this.ContextMenuOptions.Name = "ntfiContextMenu";
             resources.ApplyResources(this.ContextMenuOptions, "ContextMenuOptions");
@@ -83,6 +85,12 @@
             this.pickColorToolStripMenuItem.Name = "pickColorToolStripMenuItem";
             resources.ApplyResources(this.pickColorToolStripMenuItem, "pickColorToolStripMenuItem");
             this.pickColorToolStripMenuItem.Click += new System.EventHandler(this.pickColorToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            resources.ApplyResources(this.historyToolStripMenuItem, "historyToolStripMenuItem");
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
             // quitAppToolStripMenuItem
             // 
@@ -98,6 +106,15 @@
             this.pnlTitleBar.Controls.Add(this.label2);
             resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
+            // 
+            // btnOptions
+            // 
+            resources.ApplyResources(this.btnOptions, "btnOptions");
+            this.btnOptions.FlatAppearance.BorderSize = 0;
+            this.btnOptions.Name = "btnOptions";
+            this.optionTip.SetToolTip(this.btnOptions, resources.GetString("btnOptions.ToolTip"));
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // label1
             // 
@@ -159,12 +176,6 @@
             this.pnlColorShow.Name = "pnlColorShow";
             this.pnlColorShow.Click += new System.EventHandler(this.placeColor_Click);
             // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            resources.ApplyResources(this.historyToolStripMenuItem, "historyToolStripMenuItem");
-            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
-            // 
             // pnlHistory
             // 
             this.pnlHistory.Controls.Add(this.label3);
@@ -172,6 +183,11 @@
             this.pnlHistory.Controls.Add(this.pnlShowHistoryBorder);
             resources.ApplyResources(this.pnlHistory, "pnlHistory");
             this.pnlHistory.Name = "pnlHistory";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
             // 
             // btnReturn
             // 
@@ -195,25 +211,17 @@
             resources.ApplyResources(this.pnlShowHistory, "pnlShowHistory");
             this.pnlShowHistory.Name = "pnlShowHistory";
             // 
-            // btnOptions
-            // 
-            resources.ApplyResources(this.btnOptions, "btnOptions");
-            this.btnOptions.FlatAppearance.BorderSize = 0;
-            this.btnOptions.Name = "btnOptions";
-            this.optionTip.SetToolTip(this.btnOptions, resources.GetString("btnOptions.ToolTip"));
-            this.btnOptions.UseVisualStyleBackColor = true;
-            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
-            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // optionsToolStripMenuItem
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // frmColorPicker
             // 
@@ -271,6 +279,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolTip optionTip;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
     }
 }
 

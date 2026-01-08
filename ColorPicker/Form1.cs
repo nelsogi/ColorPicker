@@ -77,6 +77,7 @@ namespace ColorPicker
             this.Visible = true;
             this.WindowState = FormWindowState.Normal;
             this.Activate();
+            _formControler.LoadHistoryPanels(pnlShowHistory);
         }
 
         private void frmColorPicker_Deactivate(object sender, EventArgs e)
@@ -113,6 +114,11 @@ namespace ColorPicker
             _formControler.LoadHistoryPanels(pnlShowHistory);
             pnlHistory.Visible = !pnlHistory.Visible;
             pnlMain.Visible = !pnlHistory.Visible;
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
